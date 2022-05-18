@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module schemaVersion="V_0_9_29" uid="498d8dc612e64ce986464339bebcb54a" name="Seed-Example-Modul">
+    <customcodes/>
+    <customlibs/>
+    <datasources>
+        <datasource uid="2b713ec7ad7f466395900a5e2ee90c3e" name="TestSQLAbfrage">
+            <content>&lt;![CDATA[SELECT 
+id, 
+version, 
+createdon, 
+createdby, 
+modifiedon, 
+modifiedby, 
+uid, 
+stammdatenwert AS WERT
+	FROM stammdatentest]]&gt;</content>
+            <parameters/>
+            <type>SQL</type>
+        </datasource>
+    </datasources>
+    <dbobjects>
+        <dbobject type="VIEW" uid="196db5b635e74883828abee8aa59843d" name="DBobjectTestView">
+            <content>&lt;![CDATA[Select * from stammdatentest]]&gt;</content>
+        </dbobject>
+    </dbobjects>
+    <entities>
+        <entity generic="false" transferable="false" uid="f6787050617f4b8699305a388af819f5" name="DatentypenTest">
+            <fieldconstraints/>
+            <fieldgroups/>
+            <fields>
+                <field autonumStart="10000" calculated="false" fullTextSearch="false" indexed="false" mandatory="true" name="AutoNummer" type="AUTONUM" unique="true" order="1" uid="2187edffa9104d37ae8c3275eade9c88"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Bild" type="BINARY" unique="false" order="2" uid="9cac8d4aac6740729b114423a18d01aa"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="JaNein" type="BOOLEAN" unique="false" order="3" uid="e4366797cd974ab3a4fb3bef9c6f9fe0"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Datum" type="DATE" unique="false" order="4" uid="76ab47870e7445908a4db8d3d3ce6a0a"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Datum und Zeit" type="DATETIME" unique="false" order="5" uid="bddfece20bdb425fae9719d90be77815"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Dezimalzahl" type="DECIMAL" unique="false" order="6" uid="0bdefafcac2e44a392a5d7907bef5999"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Gleitkommazahl" type="DOUBLE" unique="false" order="7" uid="3b484d98cea544baad5dea65fed0becd"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Datei" type="FILE" unique="false" order="8" uid="f54a0cab1d5a442c8e7dc540a7ac4f90"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Ganzzahl" type="INTEGER" unique="false" order="9" uid="a083d492d703454b8e23b168c204eeaf"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Ganzzahl (lang)" type="LONG" unique="false" order="10" uid="deed6356ddf444afaa0b07e78f98263b"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Text" type="TEXT" unique="false" order="11" uid="7bb6542b14e2418284b5154ecb8df627"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Text (lang)" type="TEXTLONG" unique="false" order="12" uid="c6fe871760304466ad7a580dd1e6866e"/>
+            </fields>
+            <functions/>
+            <nesteds/>
+            <permissions/>
+            <relations/>
+            <statuslist/>
+            <statustransitions/>
+        </entity>
+        <entity generic="false" transferable="true" uid="315ab40e4e39451498ca3eb6915af4ec" name="StammdatenTest">
+            <fieldconstraints/>
+            <fieldgroups/>
+            <fields>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Stammdatenwert" type="TEXT" unique="false" order="1" uid="08a7141ac53b466ebbfabfdc49073acf"/>
+            </fields>
+            <functions/>
+            <nesteds/>
+            <permissions/>
+            <relations/>
+            <statuslist/>
+            <statustransitions/>
+        </entity>
+        <entity generic="false" transferable="false" uid="f18453a528ae48b3a91a0557e592884c" name="CallBackTest">
+            <fieldconstraints/>
+            <fieldgroups/>
+            <fields>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="true" name="Feld1" type="TEXT" unique="false" order="1" uid="76afd8f16c464cff80cf2d10435d93ed"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Feld2" type="TEXT" unique="false" order="2" uid="02433ec7e4ed4f0bae2810e91cb7c188"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Wert1" type="INTEGER" unique="false" order="3" uid="fe6b7247932a4d408bb96f5764160e56"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Wert2" type="INTEGER" unique="false" order="4" uid="6a626446199943a09753d582cb0c4f1d"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Summe" type="INTEGER" unique="false" order="5" uid="b3ac081b29734f12bacd7d484f7ee910"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Feld bei Erstellung" type="TEXT" unique="false" order="6" uid="b2202f5f5b6041cf9daa4eb97a6b53b0"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Feld nach Änderung" type="TEXT" unique="false" order="7" uid="0f9a84334ed74f34be0bd6191f9d0535"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Feld bei Statuswechsel" type="TEXT" unique="false" order="8" uid="37909ad9500048fc9ef66ddfd86c76d5"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Feld vor Einfügen" type="TEXT" unique="false" order="9" uid="a198ac0f4b414c43aac7c39766821d51"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Feld nach Einfügen" type="TEXT" unique="false" order="10" uid="3977d60ae2514a4881622e1dfd81a1e6"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Feld vor Speichern" type="TEXT" unique="false" order="11" uid="b8fa579b8e244ef289ed8594e2a03e9e"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Feld nach Speichern" type="TEXT" unique="false" order="12" uid="c8a5395d8a464dcfaed0b36882cbcca8"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Feld vor Löschen" type="TEXT" unique="false" order="13" uid="0a16a8c44c214f798423629f9d38c3cb"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Feld nach Löschen" type="TEXT" unique="false" order="14" uid="ea918d45814243468cb1dae232114080"/>
+                <field calculated="false" fullTextSearch="false" indexed="false" mandatory="false" name="Feld bei Benutzeraktion" type="TEXT" unique="false" order="15" uid="7b14a4a31c794f4f8ac26cdfe89abdc7"/>
+            </fields>
+            <functions>
+                <function active="true" activeAfterDelete="false" activeAfterInsert="false" activeAfterUpdate="false" activeBeforeDelete="false" activeBeforeInsert="false" activeBeforeUpdate="true" activeOnCreate="true" activeOnModify="false" activeOnStatusTransition="false" activeOnUserAction="false" callback="true" name="WertKopieren" order="1" uid="aa7f2c9bd1494ff68fd7166a7e8743b6">
+                    <content>&lt;![CDATA[package org.seed.generated.entity.callbacktest;&#13;
+&#13;
+import org.seed.core.api.CallbackFunction;&#13;
+import org.seed.core.api.CallbackFunctionContext;&#13;
+import org.seed.generated.entity.CallBackTest;&#13;
+&#13;
+public class WertKopieren implements CallbackFunction&lt;CallBackTest&gt; {&#13;
+&#13;
+	public void call(CallBackTest callbacktest,CallbackFunctionContext context) {&#13;
+		&#13;
+		String feld1Wert = callbacktest.getFeld1();&#13;
+		callbacktest.setFeld2(feld1Wert);&#13;
+			&#13;
+	}&#13;
+&#13;
+}&#13;
+]]&gt;</content>
+                </function>
+                <function active="true" activeAfterDelete="false" activeAfterInsert="false" activeAfterUpdate="false" activeBeforeDelete="false" activeBeforeInsert="false" activeBeforeUpdate="false" activeOnCreate="false" activeOnModify="false" activeOnStatusTransition="false" activeOnUserAction="false" callback="true" name="CallbackBeiErstellung" order="2" uid="a639458179e4498a94208156fa4b631a">
+                    <content>&lt;![CDATA[package org.seed.generated.entity.callbacktest;
+
+import org.seed.core.api.CallbackFunction;
+import org.seed.core.api.CallbackFunctionContext;
+import org.seed.generated.entity.CallBackTest;
+
+public class CallbackBeiErstellung implements CallbackFunction&lt;CallBackTest&gt; {
+
+	public void call(CallBackTest callbacktest,CallbackFunctionContext context) {
+		
+		// put your code here
+	
+    }
+
+}
+]]&gt;</content>
+                </function>
+            </functions>
+            <nesteds/>
+            <permissions/>
+            <relations/>
+            <statuslist/>
+            <statustransitions/>
+        </entity>
+    </entities>
+    <filters/>
+    <forms>
+        <form autoLayout="true" entityUid="f6787050617f4b8699305a388af819f5" uid="4e3ab415d4814fd2acc47bca52ccc38b" name="DatentypenTest">
+            <actions>
+                <action type="SAVE" order="1" uid="7546e47ae5f945adbb751c54a4577490"/>
+                <action type="REFRESH" order="2" uid="617f891b735c4b2ba42037cd3a8cb46c"/>
+                <action type="SEARCH" order="3" uid="1a12637f8f614ccda89452f7b0476e39"/>
+                <action type="NEWOBJECT" order="4" uid="9cc1f039c2804e6a9d2807301f7f04e7"/>
+                <action type="DETAIL" order="5" uid="764bc571b3744c77a626f67ab24f63fd"/>
+                <action type="DELETE" order="6" uid="abc94f38389045378f79823abfafcddb"/>
+                <action type="PRINT" order="7" uid="03de74f64ab94af582f75aa86ac8a1cc"/>
+                <action type="EXPORTLIST" order="8" uid="1c32f4fc9149465f904f47a7767b9237"/>
+            </actions>
+            <fieldextras/>
+            <fields>
+                <field selected="true" entityFieldUid="2187edffa9104d37ae8c3275eade9c88" order="1" uid="a99c6337264a495198a911ee29642ea9"/>
+                <field selected="false" entityFieldUid="9cac8d4aac6740729b114423a18d01aa" order="2" uid="ed2961b73b33455ead84dddcafaf5d16"/>
+                <field selected="false" entityFieldUid="e4366797cd974ab3a4fb3bef9c6f9fe0" order="3" uid="637f52feb8e24b77a9e72ef6e50c6f24"/>
+                <field selected="false" entityFieldUid="76ab47870e7445908a4db8d3d3ce6a0a" order="4" uid="ee9b9799890d4c20b00986ff4a9915b0"/>
+                <field selected="false" entityFieldUid="bddfece20bdb425fae9719d90be77815" order="5" uid="91e78f3df32c4b62b0e55d1566162dd6"/>
+                <field selected="false" entityFieldUid="0bdefafcac2e44a392a5d7907bef5999" order="6" uid="dbded194febb420189a6f71d42048e9e"/>
+                <field selected="false" entityFieldUid="3b484d98cea544baad5dea65fed0becd" order="7" uid="fc672acfe04e4225aa6b7e263f9e062a"/>
+                <field selected="false" entityFieldUid="f54a0cab1d5a442c8e7dc540a7ac4f90" order="8" uid="c73b3be8493a4a0a9344b3fb1f17e69f"/>
+                <field selected="false" entityFieldUid="a083d492d703454b8e23b168c204eeaf" order="9" uid="19034f8d783344cf960bb881410eb142"/>
+                <field selected="false" entityFieldUid="deed6356ddf444afaa0b07e78f98263b" order="10" uid="fa5c9842f5ce4dccb3511c407846a774"/>
+                <field selected="true" entityFieldUid="7bb6542b14e2418284b5154ecb8df627" order="11" uid="90e40881dc07421d8c723e0de4ce9cfb"/>
+                <field selected="false" entityFieldUid="c6fe871760304466ad7a580dd1e6866e" order="12" uid="c25c23f928a4441687050c16916ba393"/>
+                <field selected="false" systemField="CREATEDON" order="13" uid="cdd57b7751ba4ecf8e46fb9226e35ce5"/>
+                <field selected="false" systemField="CREATEDBY" order="14" uid="fe3240b56eb1459a8dcccf4221e93d98"/>
+                <field selected="false" systemField="MODIFIEDON" order="15" uid="73de4271a6af43c68871f23cb5c03b01"/>
+                <field selected="false" systemField="MODIFIEDBY" order="16" uid="fa516ac37e114da6a4ea6ddbefea8dc3"/>
+            </fields>
+            <layout>
+                <content>&lt;![CDATA[&lt;zk&gt;&#13;
+    &lt;grid class="alpha-noborder"&gt;&#13;
+        &lt;rows&gt;&#13;
+            &lt;row&gt;&#13;
+                &lt;cell valign="top"&gt;&#13;
+                    &lt;groupbox&gt;&#13;
+                        &lt;caption label="DatentypenTest"/&gt;&#13;
+                        &lt;grid class="alpha-noborder"&gt;&#13;
+                            &lt;rows&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="AutoNummer"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('2187edffa9104d37ae8c3275eade9c88'))" readonly="@load(vm.isFieldReadonly('2187edffa9104d37ae8c3275eade9c88'))" hflex="1" id="2187edffa9104d37ae8c3275eade9c88" mandatory="@load(vm.isFieldMandatory('2187edffa9104d37ae8c3275eade9c88'))" value="@bind(vm.object.autonummer)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="JaNein"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;checkbox onCheck="@command('objectChanged',fieldId='e4366797cd974ab3a4fb3bef9c6f9fe0',elem=self)" visible="@load(vm.isFieldVisible('e4366797cd974ab3a4fb3bef9c6f9fe0'))" hflex="1" checked="@bind(vm.object.janein)" disabled="@load(vm.isFieldReadonly('e4366797cd974ab3a4fb3bef9c6f9fe0'))" id="e4366797cd974ab3a4fb3bef9c6f9fe0"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Datum"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;datebox visible="@load(vm.isFieldVisible('76ab47870e7445908a4db8d3d3ce6a0a'))" readonly="@load(vm.isFieldReadonly('76ab47870e7445908a4db8d3d3ce6a0a'))" onChange="@command('objectChanged',fieldId='76ab47870e7445908a4db8d3d3ce6a0a',elem=self)" hflex="1" id="76ab47870e7445908a4db8d3d3ce6a0a" mandatory="@load(vm.isFieldMandatory('76ab47870e7445908a4db8d3d3ce6a0a'))" value="@bind(vm.object.datum)"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Datum und Zeit"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;datebox visible="@load(vm.isFieldVisible('bddfece20bdb425fae9719d90be77815'))" readonly="@load(vm.isFieldReadonly('bddfece20bdb425fae9719d90be77815'))" onChange="@command('objectChanged',fieldId='bddfece20bdb425fae9719d90be77815',elem=self)" format="long+medium" hflex="1" id="bddfece20bdb425fae9719d90be77815" mandatory="@load(vm.isFieldMandatory('bddfece20bdb425fae9719d90be77815'))" value="@bind(vm.object.datum_und_zeit)"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Dezimalzahl"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;decimalbox visible="@load(vm.isFieldVisible('0bdefafcac2e44a392a5d7907bef5999'))" readonly="@load(vm.isFieldReadonly('0bdefafcac2e44a392a5d7907bef5999'))" onChange="@command('objectChanged',fieldId='0bdefafcac2e44a392a5d7907bef5999',elem=self)" hflex="1" id="0bdefafcac2e44a392a5d7907bef5999" mandatory="@load(vm.isFieldMandatory('0bdefafcac2e44a392a5d7907bef5999'))" value="@bind(vm.object.dezimalzahl)"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Gleitkommazahl"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;doublebox visible="@load(vm.isFieldVisible('3b484d98cea544baad5dea65fed0becd'))" readonly="@load(vm.isFieldReadonly('3b484d98cea544baad5dea65fed0becd'))" onChange="@command('objectChanged',fieldId='3b484d98cea544baad5dea65fed0becd',elem=self)" hflex="1" id="3b484d98cea544baad5dea65fed0becd" mandatory="@load(vm.isFieldMandatory('3b484d98cea544baad5dea65fed0becd'))" value="@bind(vm.object.gleitkommazahl)"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Datei"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;filebox fileName="@bind(vm.object.datei.name)" visible="@load(vm.isFieldVisible('f54a0cab1d5a442c8e7dc540a7ac4f90'))" readonly="@load(vm.isFieldReadonly('f54a0cab1d5a442c8e7dc540a7ac4f90'))" onChange="@command('objectChanged',fieldId='f54a0cab1d5a442c8e7dc540a7ac4f90',elem=self)" hflex="1" id="f54a0cab1d5a442c8e7dc540a7ac4f90" contentType="@bind(vm.object.datei.contentType)" mandatory="@load(vm.isFieldMandatory('f54a0cab1d5a442c8e7dc540a7ac4f90'))" content="@bind(vm.object.datei.content)"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Ganzzahl"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;intbox visible="@load(vm.isFieldVisible('a083d492d703454b8e23b168c204eeaf'))" readonly="@load(vm.isFieldReadonly('a083d492d703454b8e23b168c204eeaf'))" onChange="@command('objectChanged',fieldId='a083d492d703454b8e23b168c204eeaf',elem=self)" hflex="1" id="a083d492d703454b8e23b168c204eeaf" mandatory="@load(vm.isFieldMandatory('a083d492d703454b8e23b168c204eeaf'))" value="@bind(vm.object.ganzzahl)"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Ganzzahl (lang)"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;longbox visible="@load(vm.isFieldVisible('deed6356ddf444afaa0b07e78f98263b'))" readonly="@load(vm.isFieldReadonly('deed6356ddf444afaa0b07e78f98263b'))" onChange="@command('objectChanged',fieldId='deed6356ddf444afaa0b07e78f98263b',elem=self)" hflex="1" id="deed6356ddf444afaa0b07e78f98263b" mandatory="@load(vm.isFieldMandatory('deed6356ddf444afaa0b07e78f98263b'))" value="@bind(vm.object.ganzzahl_lang)"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Text"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('7bb6542b14e2418284b5154ecb8df627'))" readonly="@load(vm.isFieldReadonly('7bb6542b14e2418284b5154ecb8df627'))" onChange="@command('objectChanged',fieldId='7bb6542b14e2418284b5154ecb8df627',elem=self)" hflex="1" id="7bb6542b14e2418284b5154ecb8df627" mandatory="@load(vm.isFieldMandatory('7bb6542b14e2418284b5154ecb8df627'))" value="@bind(vm.object.text) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Text (lang)"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('c6fe871760304466ad7a580dd1e6866e'))" readonly="@load(vm.isFieldReadonly('c6fe871760304466ad7a580dd1e6866e'))" onChange="@command('objectChanged',fieldId='c6fe871760304466ad7a580dd1e6866e',elem=self)" hflex="1" id="c6fe871760304466ad7a580dd1e6866e" rows="3" mandatory="@load(vm.isFieldMandatory('c6fe871760304466ad7a580dd1e6866e'))" value="@bind(vm.object.text_lang) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                            &lt;/rows&gt;&#13;
+                            &lt;columns&gt;&#13;
+                                &lt;column hflex="min"/&gt;&#13;
+                                &lt;column/&gt;&#13;
+                            &lt;/columns&gt;&#13;
+                        &lt;/grid&gt;&#13;
+                    &lt;/groupbox&gt;&#13;
+                &lt;/cell&gt;&#13;
+                &lt;cell/&gt;&#13;
+            &lt;/row&gt;&#13;
+        &lt;/rows&gt;&#13;
+        &lt;columns&gt;&#13;
+            &lt;column/&gt;&#13;
+            &lt;column/&gt;&#13;
+        &lt;/columns&gt;&#13;
+    &lt;/grid&gt;&#13;
+&lt;/zk&gt;&#13;
+]]&gt;</content>
+            </layout>
+            <printouts/>
+            <subforms/>
+            <transformers/>
+        </form>
+        <form autoLayout="true" entityUid="315ab40e4e39451498ca3eb6915af4ec" uid="289c0a75708f4a688b0a288bc3b3b709" name="StammdatenTest">
+            <actions>
+                <action type="SAVE" order="1" uid="6f9f0445340444548845f242d77fd288"/>
+                <action type="REFRESH" order="2" uid="f3393d33bc2340a2a635a8c9bdfbeb91"/>
+                <action type="SEARCH" order="3" uid="46f489a877cd4f629f30a56b949e4ae5"/>
+                <action type="NEWOBJECT" order="4" uid="2d7e854c464a4f50a7d6d61b23f8b4fe"/>
+                <action type="DETAIL" order="5" uid="36112481adef4366a35a9328befb5466"/>
+                <action type="DELETE" order="6" uid="de3f33e8b49b4e9291e113b231566cb9"/>
+                <action type="PRINT" order="7" uid="97e8f8309c4a44ceb24ad57fca7b05f3"/>
+                <action type="EXPORTLIST" order="8" uid="6c9116802d294f388ad0717611a5a142"/>
+            </actions>
+            <fieldextras/>
+            <fields>
+                <field selected="true" entityFieldUid="08a7141ac53b466ebbfabfdc49073acf" order="1" uid="c32629742af2498f851fc78910832352"/>
+                <field selected="false" systemField="CREATEDON" order="2" uid="12e449fb7c7a4a96adcc0ee78043256d"/>
+                <field selected="false" systemField="CREATEDBY" order="3" uid="6a9d6fb854ea4421b4e140613328c5e5"/>
+                <field selected="false" systemField="MODIFIEDON" order="4" uid="3f7dd0f6149442e0be48d1d310d6fbb9"/>
+                <field selected="false" systemField="MODIFIEDBY" order="5" uid="b4d849810dbb4d949767fa84163fdfea"/>
+            </fields>
+            <layout>
+                <content>&lt;![CDATA[&lt;zk&gt;&#13;
+    &lt;grid class="alpha-noborder"&gt;&#13;
+        &lt;rows&gt;&#13;
+            &lt;row&gt;&#13;
+                &lt;cell valign="top"&gt;&#13;
+                    &lt;groupbox&gt;&#13;
+                        &lt;caption label="StammdatenTest"/&gt;&#13;
+                        &lt;grid class="alpha-noborder"&gt;&#13;
+                            &lt;rows&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Stammdatenwert"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('08a7141ac53b466ebbfabfdc49073acf'))" readonly="@load(vm.isFieldReadonly('08a7141ac53b466ebbfabfdc49073acf'))" onChange="@command('objectChanged',fieldId='08a7141ac53b466ebbfabfdc49073acf',elem=self)" hflex="1" id="08a7141ac53b466ebbfabfdc49073acf" mandatory="@load(vm.isFieldMandatory('08a7141ac53b466ebbfabfdc49073acf'))" value="@bind(vm.object.stammdatenwert) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                            &lt;/rows&gt;&#13;
+                            &lt;columns&gt;&#13;
+                                &lt;column hflex="min"/&gt;&#13;
+                                &lt;column/&gt;&#13;
+                            &lt;/columns&gt;&#13;
+                        &lt;/grid&gt;&#13;
+                    &lt;/groupbox&gt;&#13;
+                &lt;/cell&gt;&#13;
+                &lt;cell/&gt;&#13;
+            &lt;/row&gt;&#13;
+        &lt;/rows&gt;&#13;
+        &lt;columns&gt;&#13;
+            &lt;column/&gt;&#13;
+            &lt;column/&gt;&#13;
+        &lt;/columns&gt;&#13;
+    &lt;/grid&gt;&#13;
+&lt;/zk&gt;&#13;
+]]&gt;</content>
+            </layout>
+            <printouts/>
+            <subforms/>
+            <transformers/>
+        </form>
+        <form autoLayout="true" entityUid="f18453a528ae48b3a91a0557e592884c" uid="34c9f035327c4c618dc3dca8bd003561" name="CallBackTest">
+            <actions>
+                <action type="SAVE" order="1" uid="6110afeb5c9a4d11a9525e8cc5313202"/>
+                <action type="REFRESH" order="2" uid="3ac5a75b36194e73a9a240d4406bfcfb"/>
+                <action type="SEARCH" order="3" uid="d239b7cb4b2641c59980b88774df9840"/>
+                <action type="NEWOBJECT" order="4" uid="e1ffde88a0d64f04816601ba36283c67"/>
+                <action type="DETAIL" order="5" uid="23d9723848f6412db8af04a07c8992a9"/>
+                <action type="DELETE" order="6" uid="5975a71a75ee428387b133bbea295b39"/>
+                <action type="PRINT" order="7" uid="2fecd487afb645e5b7a959fef4c5dc76"/>
+                <action type="EXPORTLIST" order="8" uid="e7ee8726497347bc832c895ad8c62725"/>
+            </actions>
+            <fieldextras/>
+            <fields>
+                <field selected="true" entityFieldUid="76afd8f16c464cff80cf2d10435d93ed" order="1" uid="99d419e14ad046f7aa55e6fd2c2754a0"/>
+                <field selected="true" entityFieldUid="02433ec7e4ed4f0bae2810e91cb7c188" order="2" uid="e84f8c0500e74ae1b54f14f89fb22fea"/>
+                <field selected="false" entityFieldUid="fe6b7247932a4d408bb96f5764160e56" order="3" uid="2db6c58eeaf044e6952818aa45d82e05"/>
+                <field selected="false" entityFieldUid="6a626446199943a09753d582cb0c4f1d" order="4" uid="cb0824dd6db8421aa3e064fd5906c6f8"/>
+                <field selected="false" entityFieldUid="b3ac081b29734f12bacd7d484f7ee910" order="5" uid="407c8a2275c341fdbfa3da3a4aa78401"/>
+                <field selected="true" entityFieldUid="b2202f5f5b6041cf9daa4eb97a6b53b0" order="6" uid="b2b06151c9444b43b26250f9977ac5ac"/>
+                <field selected="true" entityFieldUid="0f9a84334ed74f34be0bd6191f9d0535" order="7" uid="2bc6222d75904a889fa4b27c2d1834df"/>
+                <field selected="true" entityFieldUid="37909ad9500048fc9ef66ddfd86c76d5" order="8" uid="37091877214645258eddbd5f9fa98fb4"/>
+                <field selected="true" entityFieldUid="a198ac0f4b414c43aac7c39766821d51" order="9" uid="e361cfa393d746dcb2ec6df1f96984b0"/>
+                <field selected="true" entityFieldUid="3977d60ae2514a4881622e1dfd81a1e6" order="10" uid="cd03e72f7b7c4565bced7f58e37e39e5"/>
+                <field selected="true" entityFieldUid="b8fa579b8e244ef289ed8594e2a03e9e" order="11" uid="554da52a9f794601897938ca419239fe"/>
+                <field selected="true" entityFieldUid="c8a5395d8a464dcfaed0b36882cbcca8" order="12" uid="5ff076ef12c74abf8433b810f189ddbd"/>
+                <field selected="true" entityFieldUid="0a16a8c44c214f798423629f9d38c3cb" order="13" uid="c74deda04e8c4b46a181d6674a035db8"/>
+                <field selected="true" entityFieldUid="ea918d45814243468cb1dae232114080" order="14" uid="105c06da9cc34028a84837f823b9a1b5"/>
+                <field selected="true" entityFieldUid="7b14a4a31c794f4f8ac26cdfe89abdc7" order="15" uid="cbf75119e80a408d862c60a3ca9cbd9c"/>
+                <field selected="false" systemField="CREATEDON" order="16" uid="9483ed96406344b3a52d1b235ec3aedf"/>
+                <field selected="false" systemField="CREATEDBY" order="17" uid="f37ff3db148642d1b67653d7ff5c095a"/>
+                <field selected="false" systemField="MODIFIEDON" order="18" uid="7e2e8ff2c0124dc485ac6853ab84e654"/>
+                <field selected="false" systemField="MODIFIEDBY" order="19" uid="ba56db8c17e44730a10ef10cc3c805c0"/>
+            </fields>
+            <layout>
+                <content>&lt;![CDATA[&lt;zk&gt;&#13;
+    &lt;grid class="alpha-noborder"&gt;&#13;
+        &lt;rows&gt;&#13;
+            &lt;row&gt;&#13;
+                &lt;cell valign="top"&gt;&#13;
+                    &lt;groupbox&gt;&#13;
+                        &lt;caption label="CallBackTest"/&gt;&#13;
+                        &lt;grid class="alpha-noborder"&gt;&#13;
+                            &lt;rows&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Feld1"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('76afd8f16c464cff80cf2d10435d93ed'))" readonly="@load(vm.isFieldReadonly('76afd8f16c464cff80cf2d10435d93ed'))" onChange="@command('objectChanged',fieldId='76afd8f16c464cff80cf2d10435d93ed',elem=self)" hflex="1" id="76afd8f16c464cff80cf2d10435d93ed" mandatory="@load(vm.isFieldMandatory('76afd8f16c464cff80cf2d10435d93ed'))" value="@bind(vm.object.feld1) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Feld2"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('02433ec7e4ed4f0bae2810e91cb7c188'))" readonly="@load(vm.isFieldReadonly('02433ec7e4ed4f0bae2810e91cb7c188'))" onChange="@command('objectChanged',fieldId='02433ec7e4ed4f0bae2810e91cb7c188',elem=self)" hflex="1" id="02433ec7e4ed4f0bae2810e91cb7c188" mandatory="@load(vm.isFieldMandatory('02433ec7e4ed4f0bae2810e91cb7c188'))" value="@bind(vm.object.feld2) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Wert1"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;intbox visible="@load(vm.isFieldVisible('fe6b7247932a4d408bb96f5764160e56'))" readonly="@load(vm.isFieldReadonly('fe6b7247932a4d408bb96f5764160e56'))" onChange="@command('objectChanged',fieldId='fe6b7247932a4d408bb96f5764160e56',elem=self)" hflex="1" id="fe6b7247932a4d408bb96f5764160e56" mandatory="@load(vm.isFieldMandatory('fe6b7247932a4d408bb96f5764160e56'))" value="@bind(vm.object.wert1)"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Wert2"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;intbox visible="@load(vm.isFieldVisible('6a626446199943a09753d582cb0c4f1d'))" readonly="@load(vm.isFieldReadonly('6a626446199943a09753d582cb0c4f1d'))" onChange="@command('objectChanged',fieldId='6a626446199943a09753d582cb0c4f1d',elem=self)" hflex="1" id="6a626446199943a09753d582cb0c4f1d" mandatory="@load(vm.isFieldMandatory('6a626446199943a09753d582cb0c4f1d'))" value="@bind(vm.object.wert2)"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Summe"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;intbox visible="@load(vm.isFieldVisible('b3ac081b29734f12bacd7d484f7ee910'))" readonly="@load(vm.isFieldReadonly('b3ac081b29734f12bacd7d484f7ee910'))" onChange="@command('objectChanged',fieldId='b3ac081b29734f12bacd7d484f7ee910',elem=self)" hflex="1" id="b3ac081b29734f12bacd7d484f7ee910" mandatory="@load(vm.isFieldMandatory('b3ac081b29734f12bacd7d484f7ee910'))" value="@bind(vm.object.summe)"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Feld bei Erstellung"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('b2202f5f5b6041cf9daa4eb97a6b53b0'))" readonly="@load(vm.isFieldReadonly('b2202f5f5b6041cf9daa4eb97a6b53b0'))" onChange="@command('objectChanged',fieldId='b2202f5f5b6041cf9daa4eb97a6b53b0',elem=self)" hflex="1" id="b2202f5f5b6041cf9daa4eb97a6b53b0" mandatory="@load(vm.isFieldMandatory('b2202f5f5b6041cf9daa4eb97a6b53b0'))" value="@bind(vm.object.feld_bei_erstellung) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Feld nach Änderung"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('0f9a84334ed74f34be0bd6191f9d0535'))" readonly="@load(vm.isFieldReadonly('0f9a84334ed74f34be0bd6191f9d0535'))" onChange="@command('objectChanged',fieldId='0f9a84334ed74f34be0bd6191f9d0535',elem=self)" hflex="1" id="0f9a84334ed74f34be0bd6191f9d0535" mandatory="@load(vm.isFieldMandatory('0f9a84334ed74f34be0bd6191f9d0535'))" value="@bind(vm.object.feld_nach_aenderung) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Feld bei Statuswechsel"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('37909ad9500048fc9ef66ddfd86c76d5'))" readonly="@load(vm.isFieldReadonly('37909ad9500048fc9ef66ddfd86c76d5'))" onChange="@command('objectChanged',fieldId='37909ad9500048fc9ef66ddfd86c76d5',elem=self)" hflex="1" id="37909ad9500048fc9ef66ddfd86c76d5" mandatory="@load(vm.isFieldMandatory('37909ad9500048fc9ef66ddfd86c76d5'))" value="@bind(vm.object.feld_bei_statuswechsel) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Feld vor Einfügen"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('a198ac0f4b414c43aac7c39766821d51'))" readonly="@load(vm.isFieldReadonly('a198ac0f4b414c43aac7c39766821d51'))" onChange="@command('objectChanged',fieldId='a198ac0f4b414c43aac7c39766821d51',elem=self)" hflex="1" id="a198ac0f4b414c43aac7c39766821d51" mandatory="@load(vm.isFieldMandatory('a198ac0f4b414c43aac7c39766821d51'))" value="@bind(vm.object.feld_vor_einfuegen) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Feld nach Einfügen"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('3977d60ae2514a4881622e1dfd81a1e6'))" readonly="@load(vm.isFieldReadonly('3977d60ae2514a4881622e1dfd81a1e6'))" onChange="@command('objectChanged',fieldId='3977d60ae2514a4881622e1dfd81a1e6',elem=self)" hflex="1" id="3977d60ae2514a4881622e1dfd81a1e6" mandatory="@load(vm.isFieldMandatory('3977d60ae2514a4881622e1dfd81a1e6'))" value="@bind(vm.object.feld_nach_einfuegen) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Feld vor Speichern"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('b8fa579b8e244ef289ed8594e2a03e9e'))" readonly="@load(vm.isFieldReadonly('b8fa579b8e244ef289ed8594e2a03e9e'))" onChange="@command('objectChanged',fieldId='b8fa579b8e244ef289ed8594e2a03e9e',elem=self)" hflex="1" id="b8fa579b8e244ef289ed8594e2a03e9e" mandatory="@load(vm.isFieldMandatory('b8fa579b8e244ef289ed8594e2a03e9e'))" value="@bind(vm.object.feld_vor_speichern) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Feld nach Speichern"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('c8a5395d8a464dcfaed0b36882cbcca8'))" readonly="@load(vm.isFieldReadonly('c8a5395d8a464dcfaed0b36882cbcca8'))" onChange="@command('objectChanged',fieldId='c8a5395d8a464dcfaed0b36882cbcca8',elem=self)" hflex="1" id="c8a5395d8a464dcfaed0b36882cbcca8" mandatory="@load(vm.isFieldMandatory('c8a5395d8a464dcfaed0b36882cbcca8'))" value="@bind(vm.object.feld_nach_speichern) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Feld vor Löschen"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('0a16a8c44c214f798423629f9d38c3cb'))" readonly="@load(vm.isFieldReadonly('0a16a8c44c214f798423629f9d38c3cb'))" onChange="@command('objectChanged',fieldId='0a16a8c44c214f798423629f9d38c3cb',elem=self)" hflex="1" id="0a16a8c44c214f798423629f9d38c3cb" mandatory="@load(vm.isFieldMandatory('0a16a8c44c214f798423629f9d38c3cb'))" value="@bind(vm.object.feld_vor_loeschen) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Feld nach Löschen"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('ea918d45814243468cb1dae232114080'))" readonly="@load(vm.isFieldReadonly('ea918d45814243468cb1dae232114080'))" onChange="@command('objectChanged',fieldId='ea918d45814243468cb1dae232114080',elem=self)" hflex="1" id="ea918d45814243468cb1dae232114080" mandatory="@load(vm.isFieldMandatory('ea918d45814243468cb1dae232114080'))" value="@bind(vm.object.feld_nach_loeschen) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                                &lt;row&gt;&#13;
+                                    &lt;cell valign="top" align="right"&gt;&#13;
+                                        &lt;label value="Feld bei Benutzeraktion"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                    &lt;cell&gt;&#13;
+                                        &lt;textbox visible="@load(vm.isFieldVisible('7b14a4a31c794f4f8ac26cdfe89abdc7'))" readonly="@load(vm.isFieldReadonly('7b14a4a31c794f4f8ac26cdfe89abdc7'))" onChange="@command('objectChanged',fieldId='7b14a4a31c794f4f8ac26cdfe89abdc7',elem=self)" hflex="1" id="7b14a4a31c794f4f8ac26cdfe89abdc7" mandatory="@load(vm.isFieldMandatory('7b14a4a31c794f4f8ac26cdfe89abdc7'))" value="@bind(vm.object.feld_bei_benutzeraktion) @converter(vm.stringConverter)" instant="true"/&gt;&#13;
+                                    &lt;/cell&gt;&#13;
+                                &lt;/row&gt;&#13;
+                            &lt;/rows&gt;&#13;
+                            &lt;columns&gt;&#13;
+                                &lt;column hflex="min"/&gt;&#13;
+                                &lt;column/&gt;&#13;
+                            &lt;/columns&gt;&#13;
+                        &lt;/grid&gt;&#13;
+                    &lt;/groupbox&gt;&#13;
+                &lt;/cell&gt;&#13;
+                &lt;cell/&gt;&#13;
+            &lt;/row&gt;&#13;
+        &lt;/rows&gt;&#13;
+        &lt;columns&gt;&#13;
+            &lt;column/&gt;&#13;
+            &lt;column/&gt;&#13;
+        &lt;/columns&gt;&#13;
+    &lt;/grid&gt;&#13;
+&lt;/zk&gt;&#13;
+]]&gt;</content>
+            </layout>
+            <printouts/>
+            <subforms/>
+            <transformers/>
+        </form>
+    </forms>
+    <menus>
+        <menu uid="57e3b39629024b75b5920f7c69d90695" name="Eigene Objekte">
+            <children>
+                <child formUid="34c9f035327c4c618dc3dca8bd003561" uid="5ca0d8933b9f4e30a65a9793a9d76305" name="CallBackTest">
+                    <children/>
+                </child>
+                <child formUid="4e3ab415d4814fd2acc47bca52ccc38b" uid="33d3d2d58cdb4991abc2c46f6728bba8" name="DatentypenTest">
+                    <children/>
+                </child>
+                <child formUid="289c0a75708f4a688b0a288bc3b3b709" uid="8b365558b48f4286b7109e0ecf8bf83f" name="StammdatenTest">
+                    <children/>
+                </child>
+            </children>
+        </menu>
+        <menu uid="9bb6a3f50e554062960a1e4118e4c0ea" name="TestMenü">
+            <children>
+                <child formUid="289c0a75708f4a688b0a288bc3b3b709" uid="56f9b73470304e2da1aad6e2b1af2643" name="001 - StammdatenTest">
+                    <children/>
+                </child>
+                <child formUid="4e3ab415d4814fd2acc47bca52ccc38b" uid="edf5e0d1067b4fc184ffd0a00e50e0e2" name="002 - DatentypenTest">
+                    <children/>
+                </child>
+                <child formUid="34c9f035327c4c618dc3dca8bd003561" uid="74deca10447746c48a699a196ce1bd65" name="003 - CallBackTest">
+                    <children/>
+                </child>
+            </children>
+        </menu>
+    </menus>
+    <parameters/>
+    <reports>
+        <report uid="4f02316cc7d14850a4a898f5ef18fdbd" name="TestSQLReport">
+            <datasources>
+                <datasource dataSourceUid="2b713ec7ad7f466395900a5e2ee90c3e" order="1" uid="70f65814f41a490bbabcaf93c34e7ccb"/>
+            </datasources>
+            <permissions/>
+        </report>
+    </reports>
+    <restservices/>
+    <tasks/>
+    <transfers/>
+    <transformers/>
+    <usergroups/>
+</module>

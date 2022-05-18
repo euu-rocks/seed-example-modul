@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.seed</groupId>
+	<artifactId>seed-example-modul</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>seed-example-modul</name>
+	<description>Example Seed Modul for try out all possibilities configurations and implementations</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<seed.version>0.9.30</seed.version>
+		<junit.version>5.8.2</junit.version>
+		<selenium.version>4.1.0</selenium.version>
+	</properties>
+	
+	<repositories>
+		<repository>
+			<id>seed</id>
+			<name>EUU.ROCKS Repository</name>
+			<url>http://storage.euu.rocks/m2</url>
+		</repository>
+		<repository>
+	        <id>ZK CE</id>
+	        <name>ZK CE Repository</name>
+	        <url>http://mavensync.zkoss.org/maven2</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+			<version>${junit.version}</version>
+        </dependency>
+		
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<scope>test</scope>
+			<version>${selenium.version}</version>
+		</dependency>
+		
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<release>11</release>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	
+	<profiles>
+		<profile>
+			<id>code</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>org.seed</groupId>
+					<artifactId>seed</artifactId>
+					<version>${seed.version}</version>
+					<classifier>jar-with-dependencies</classifier>
+				</dependency>
+			</dependencies>
+		</profile>
+		<profile>
+			<id>run</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>org.seed</groupId>
+					<artifactId>seed</artifactId>
+					<version>${seed.version}</version>
+				</dependency>
+			</dependencies>
+			<build>
+				<plugins>
+					<plugin>
+			            <groupId>org.springframework.boot</groupId>
+			            <artifactId>spring-boot-maven-plugin</artifactId>             
+			            <configuration>    
+			                <mainClass>org.seed.Seed</mainClass>
+			                <arguments>-Dspring.config.location=file:application.properties</arguments>
+			                <jvmArguments>
+		                        -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8008
+		                    </jvmArguments>
+			            </configuration>
+			        </plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

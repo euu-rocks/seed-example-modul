@@ -1,0 +1,65 @@
+ifndef::imagesdir[:imagesdir: doc/images]
+
+= Seed Example Modul
+
+Example Seed Modul for try out all possibilities configurations and implementations
+
+
+== Step by Step Setup
+
+
+Vorraussetzung für diese Anleitung ist eine eingerichtete Entwicklungsumgebung mit Git, Maven, PostgreSQL, Java
+Die Howtos dafür finden sich hier -> <TODO LINK>
+
+
+=== Projekt von Github klonen
+
+[source,bash]
+----
+git clone https://github.com/euu-rocks/seed-example-modul.git <1>
+cd seed-example-modul <2>
+mvn clean test <3>
+----
+<1> Repository vom GitHub auf die lokale Festplatte klonen
+<2> in das geklonte Verzeichniss wechseln
+<3> einmal zum Test die geklonten Quellen durchbauen mit Maven
+
+Wenn alle 3 Punkte funktioniert haben, ist die wahrschlichkeit sehr groß das es in der IDE direkt verwendet werden kann
+
+
+
+=== Eclipse als IDE
+
+File -> Import -> Existing Maven Projects
+Order auswählen c:\Users\developer\seed-example-modul
+
+
+====  Application.properties anpassen
+
+Für die lokale Ausführung in der Entwicklungsumgebung muss eine Datenbank angegeben werden, die im besten Fall lokal läuft.
+Project Explorer -> seed-example-modul -> src/main/resources -> application.properties
+[source,ini]
+----
+...
+### Data source ###
+spring.datasource.url = jdbc:postgresql://127.0.0.1:5432/seed   <1>
+spring.datasource.username = seed                               <2>
+spring.datasource.password = seed                               <3>
+...
+----
+<1> IP/Datenbank der Entwicklungsdatenbank
+<2> Benutzer der Entwicklungsdatenbank
+<3> Passwort der Entwicklungsdatenbank
+
+
+
+==== Starten aus der IDE
+
+Projekt initial starten:
+Run -> Run Configurations... -> Maven Build -> New Configuration -> 
+
+image::eclipse-run-settings.png[:setup]
+
+
+
+
