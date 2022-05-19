@@ -23,7 +23,7 @@
 		<repository>
 			<id>seed</id>
 			<name>EUU.ROCKS Repository</name>
-			<url>http://storage.euu.rocks/m2</url>
+			<url>https://storage.euu.rocks/m2</url>
 		</repository>
 		<repository>
 	        <id>ZK CE</id>
