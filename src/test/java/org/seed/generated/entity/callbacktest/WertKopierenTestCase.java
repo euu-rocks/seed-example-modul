@@ -1,4 +1,4 @@
-package org.seed.generated.entity.buch;
+package org.seed.generated.entity.callbacktest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
