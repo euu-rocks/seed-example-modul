@@ -80,7 +80,7 @@
 					<artifactId>seed</artifactId>
 					<version>${seed.version}</version>
 					<classifier>jar-with-dependencies</classifier>
-										<exclusions>
+					<exclusions>
 						<exclusion>
 							<groupId>org.glassfish.jaxb</groupId>
 							<artifactId>jaxb-runtime</artifactId>
